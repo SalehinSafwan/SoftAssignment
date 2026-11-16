@@ -42,7 +42,7 @@ class StudentCrudIT extends IntegrationTestSupport {
         // CREATE -> 201
         MvcResult created = mockMvc.perform(post("/api/students")
                         .session(admin.session())
-                        //.header("X-CSRF-TOKEN", admin.csrfToken())
+                        .header("X-CSRF-TOKEN", admin.csrfToken())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(userJson("Rahim", email, "Student@123", "CSE")))
                 .andExpect(status().isCreated())
