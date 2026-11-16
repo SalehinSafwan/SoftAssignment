@@ -119,7 +119,7 @@ class UserServiceTest {
 
         when(userRepository.findByIdAndRole(5L, Role.TEACHER)).thenReturn(Optional.of(existing));
         when(userRepository.findByEmail("new@uni.edu")).thenReturn(Optional.empty());
-        when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
+        //when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         UpdateUserRequest request = new UpdateUserRequest(
                 "New Name", "new@uni.edu", "", "EEE", "01822222222"
