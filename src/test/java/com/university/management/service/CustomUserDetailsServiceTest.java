@@ -50,8 +50,8 @@ class CustomUserDetailsServiceTest {
 
         UserDetails details = customUserDetailsService.loadUserByUsername("teacher@uni.edu");
 
-        //assertEquals("teacher@uni.edu", details.getUsername());
-        //assertEquals("HASHED", details.getPassword());
+        assertEquals("teacher@uni.edu", details.getUsername());
+        assertEquals("HASHED", details.getPassword());
 
         // .roles("TEACHER") becomes the authority "ROLE_TEACHER",
         // which is what hasRole("TEACHER") in SecurityConfig checks
